@@ -34,7 +34,8 @@ const ThreadSchema = new mongoose.Schema({
     updatedAt: {
         type: Date,
         default: Date.now
-    }
+    },
+
 });
 
 export default mongoose.model("Thread", ThreadSchema);
