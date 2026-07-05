@@ -10,20 +10,37 @@ function ChatWindow() {
     const [loading, setLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
+    const user = JSON.parse(localStorage.getItem("user"));
+
     const getReply = async () => {
         setLoading(true);
         setNewChat(false);
 
         console.log("message ", prompt, " threadId ", currThreadId);
         const options = {
+
             method: "POST",
+
             headers: {
-                "Content-Type": "application/json"
+
+                "Content-Type": "application/json",
+
+                ...(localStorage.getItem("token") && {
+
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+
+                })
+
             },
+
             body: JSON.stringify({
+
                 message: prompt,
+
                 threadId: currThreadId
+
             })
+
         };
 
         try {
@@ -44,6 +61,7 @@ function ChatWindow() {
             alert(err.message);
         } finally {
             setLoading(false);
+            window.dispatchEvent(new Event("threadUpdated"));
         }
     }
 
@@ -69,26 +87,141 @@ function ChatWindow() {
         setIsOpen(!isOpen);
     }
 
+    const logout = () => {
+
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+
+        setIsOpen(false);
+
+        window.dispatchEvent(new Event("storage"));
+
+    }
+
+    const switchAccount = () => {
+
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+
+        window.location.href = "/login";
+
+    }
+
+    const [isLoggedIn, setIsLoggedIn] = useState(
+        !!localStorage.getItem("token")
+    );
+
+    useEffect(() => {
+
+        const update = () => {
+            setIsLoggedIn(!!localStorage.getItem("token"));
+        };
+
+        window.addEventListener("storage", update);
+
+        return () => window.removeEventListener("storage", update);
+
+    }, []);
+
     return (
         <div className="chatWindow">
             <div className="navbar">
-                <span>Neurixa AI <i className="fa-solid fa-chevron-down"></i></span>
+                <span>
+
+                    {
+
+                        isLoggedIn
+
+                            ?
+
+                            <>Welcome, <b>{user?.name}</b></>
+
+                            :
+
+                            <>Welcome, <b>Guest</b></>
+
+                    }
+
+                </span>
                 <div className="userIconDiv" onClick={handleProfileClick}>
                     <span className="userIcon"><i className="fa-solid fa-user"></i></span>
                 </div>
             </div>
             {
                 isOpen &&
+
                 <div className="dropDown">
-                    <div className="dropDownItem"><i class="fa-solid fa-gear"></i> Settings</div>
-                    <div className="dropDownItem"><i class="fa-solid fa-cloud-arrow-up"></i> Upgrade plan</div>
-                    <div className="dropDownItem"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</div>
+
+                    <div className="dropDownItem">
+                        <i className="fa-solid fa-gear"></i>
+                        Settings
+                    </div>
+
+                    <div className="dropDownItem">
+                        <i className="fa-solid fa-cloud-arrow-up"></i>
+                        Upgrade Plan
+                    </div>
+
+                    {
+                        isLoggedIn ? (
+
+                            <>
+                                <div
+                                    className="dropDownItem"
+                                    onClick={logout}
+                                >
+                                    <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                                    Logout
+                                </div>
+
+                                <div
+                                    className="dropDownItem"
+                                    onClick={switchAccount}
+                                >
+                                    <i className="fa-solid fa-users"></i>
+                                    Switch Account
+                                </div>
+                            </>
+
+                        ) : (
+
+                            <>
+                                <div
+                                    className="dropDownItem"
+                                    onClick={() => window.location.href = "/login"}
+                                >
+                                    <i className="fa-solid fa-right-to-bracket"></i>
+                                    Login
+                                </div>
+
+                                <div
+                                    className="dropDownItem"
+                                    onClick={() => window.location.href = "/register"}
+                                >
+                                    <i className="fa-solid fa-user-plus"></i>
+                                    Register
+                                </div>
+                            </>
+
+                        )
+                    }
+
                 </div>
             }
             <Chat></Chat>
 
-            <ScaleLoader color="#fff" loading={loading}>
-            </ScaleLoader>
+            <div className="loaderContainer">
+
+                <ScaleLoader
+                    color="#60A5FA"
+                    loading={loading}
+                    height={40}
+                    width={4}
+                    radius={4}
+                    margin={3}
+                />
+
+            </div>
 
             <div className="chatInput">
                 <div className="inputBox">

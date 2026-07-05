@@ -1,40 +1,66 @@
-.sidebar {
-    background-color: #171717;
-    color: #b4b4b4;
-    height: 100vh;
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.sidebar{
+
+    width:280px;
+min-width:280px;
+
+    height:100vh;
+
+    background:rgba(15,23,42,.65);
+
+    backdrop-filter:blur(18px);
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:20px;
+
+}
+button{
+
+    width:95%;
+
+    margin:16px auto;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#4F46E5,#22C1F3);
+
+}
+.logo{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:14px;
+
 }
 
+.logo:hover{
 
-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: transparent;
-    border: solid 0.5px rgba(255, 255, 255, 0.5);
-    cursor: pointer;
+    transform:rotate(-8deg) scale(1.08);
+
 }
-
-.logo {
-    height: 25px;
-    width: 25px;
-    background-color: #fff;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
 button span {
     font-size: 20px;
 }
 
-button:hover {
-    background-color: rgba(180, 180, 180, 0.05);
+button:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 12px 28px rgba(0,0,0,.35);
+
 }
 
 .history {
@@ -43,27 +69,30 @@ button:hover {
     height: 100%;
 }
 
-.history li {
-    list-style-type: none;
-    cursor: pointer;
-    padding: 2px 5px;
-    margin-bottom: 0.3rem;
-    font-size: 14px;
-    border: solid 10px transparent;
-    position: relative;
-}
+.history li{
 
-.history li:hover {
-    background-color: rgba(180, 180, 180, 0.05);
-    border-radius: 10px;
-}
+    margin-bottom:12px;
 
-.sign {
-    padding: 10px;
-    margin: 10px;
-    font-size: 14px;
-    text-align: center;
-    border-top: solid 0.25px rgba(255, 255, 255, 0.5);
+    padding:12px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+.history li:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+.sign{
+
+    padding:20px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+
 }
 
 .fa-trash {
@@ -90,4 +119,105 @@ button:hover {
     width:40px;
     height:40px;
     border-radius:10px;
+}
+
+.newChatBtn{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logoSection{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.logoSection h3{
+
+    color:white;
+
+    font-size:17px;
+
+}
+
+.logoSection small{
+
+    color:#94A3B8;
+
+    font-size:12px;
+
+}
+.logoText{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.logoText h2{
+
+    color:#FFFFFF;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin:0;
+
+}
+
+.logoSubtitle{
+
+    color:#D6D6D6;
+
+    font-size:13px;
+
+    font-weight:500;
+
+    opacity:.9;
+
+    margin-top:3px;
+
+}
+
+.guestCard{
+
+    margin:20px;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:#1E293B;
+
+    text-align:center;
+
+}
+
+.guestCard h3{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.guestCard p{
+
+    color:#94A3B8;
+
+    font-size:13px;
+
 }

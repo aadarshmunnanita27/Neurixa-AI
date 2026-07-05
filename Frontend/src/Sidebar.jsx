@@ -1,29 +1,74 @@
 import "./Sidebar.css";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MyContext } from "./MyContext.jsx";
-import {v1 as uuidv1} from "uuid";
+import { v1 as uuidv1 } from "uuid";
 const API_URL = import.meta.env.VITE_API_URL;
-
+import logo from "./assets/logo.png";
+// import { useContext, useEffect, useState } from "react";
 
 function Sidebar() {
-    const {allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats} = useContext(MyContext);
-
-    const getAllThreads = async () => {
-        try {
-            const response = await fetch(`${API_URL}/thread`);
-            const res = await response.json();
-            const filteredData = res.map(thread => ({threadId: thread.threadId, title: thread.title}));
-            //console.log(filteredData);
-            setAllThreads(filteredData);
-        } catch(err) {
-            console.log(err);
-        }
-    };
+    const { allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats } = useContext(MyContext);
+    const [user, setUser] = useState(
+        JSON.parse(localStorage.getItem("user") || "null")
+    );
 
     useEffect(() => {
-        getAllThreads();
-    }, [currThreadId])
 
+        const updateUser = () => {
+            setUser(JSON.parse(localStorage.getItem("user") || "null"));
+        };
+
+        window.addEventListener("storage", updateUser);
+
+        return () => window.removeEventListener("storage", updateUser);
+
+    }, []);
+    const getAllThreads = async () => {
+
+        if (!localStorage.getItem("token")) {
+            setAllThreads([]);
+            return;
+        }
+
+        try {
+
+            const response = await fetch(`${API_URL}/thread`, {
+
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
+
+            });
+
+            const res = await response.json();
+
+            const filteredData = res.map(thread => ({
+                threadId: thread.threadId,
+                title: thread.title
+            }));
+
+            setAllThreads(filteredData);
+
+        } catch (err) {
+            console.log(err);
+        }
+
+    };
+  useEffect(() => {
+
+    getAllThreads();
+
+    const refreshThreads = () => {
+        getAllThreads();
+    };
+
+    window.addEventListener("threadUpdated", refreshThreads);
+
+    return () => {
+        window.removeEventListener("threadUpdated", refreshThreads);
+    };
+
+}, [currThreadId]);
 
     const createNewChat = () => {
         setNewChat(true);
@@ -37,64 +82,115 @@ function Sidebar() {
         setCurrThreadId(newThreadId);
 
         try {
-            const response = await fetch(`${API_URL}/thread/${newThreadId}`);
+            const response = await fetch(`${API_URL}/thread/${newThreadId}`, {
+
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
+
+            });
             const res = await response.json();
             console.log(res);
             setPrevChats(res);
             setNewChat(false);
             setReply(null);
-        } catch(err) {
+        } catch (err) {
             console.log(err);
         }
-    }   
+    }
 
     const deleteThread = async (threadId) => {
         try {
-            const response = await fetch(`${API_URL}/thread/${threadId}`, {method: "DELETE"});
+            const response = await fetch(`${API_URL}/thread/${threadId}`, {
+
+                method: "DELETE",
+
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
+
+            });
             const res = await response.json();
             console.log(res);
 
             //updated threads re-render
             setAllThreads(prev => prev.filter(thread => thread.threadId !== threadId));
 
-            if(threadId === currThreadId) {
+            if (threadId === currThreadId) {
                 createNewChat();
             }
 
-        } catch(err) {
+        } catch (err) {
             console.log(err);
         }
     }
 
     return (
         <section className="sidebar">
-            <button onClick={createNewChat}>
-                <img src="src/assets/logo.png" alt="gpt logo" className="logo"></img>
-                <span><i className="fa-solid fa-pen-to-square"></i></span>
+            <button className="newChatBtn" onClick={createNewChat}>
+
+                <div className="logoSection">
+
+                    <img
+                        src={logo}
+                        alt="Neurixa AI"
+                        className="logo"
+                    />
+
+                    <div className="logoText">
+                        <h2>Neurixa AI</h2>
+                        <p className="logoSubtitle">Your AI Assistant</p>
+                    </div>
+
+                </div>
+
+                <i className="fa-solid fa-plus"></i>
+
             </button>
+            {
+                !localStorage.getItem("token") && (
 
+                    <div className="guestCard">
 
-            <ul className="history">
-                {
-                    allThreads?.map((thread, idx) => (
-                        <li key={idx} 
-                            onClick={(e) => changeThread(thread.threadId)}
-                            className={thread.threadId === currThreadId ? "highlighted": " "}
-                        >
-                            {thread.title}
-                            <i className="fa-solid fa-trash"
-                                onClick={(e) => {
-                                    e.stopPropagation(); //stop event bubbling
-                                    deleteThread(thread.threadId);
-                                }}
-                            ></i>
-                        </li>
-                    ))
-                }
-            </ul>
- 
+                        <h3>Guest Mode</h3>
+
+                        <p>
+
+                            Login to save chat history permanently.
+
+                        </p>
+
+                    </div>
+
+                )
+            }
+            {
+                localStorage.getItem("token") && (
+                    <ul className="history">
+                        {
+                            allThreads?.map((thread, idx) => (
+                                <li key={idx}
+                                    onClick={(e) => changeThread(thread.threadId)}
+                                    className={thread.threadId === currThreadId ? "highlighted" : " "}
+                                >
+                                    {thread.title}
+                                    <i className="fa-solid fa-trash"
+                                        onClick={(e) => {
+                                            e.stopPropagation(); //stop event bubbling
+                                            deleteThread(thread.threadId);
+                                        }}
+                                    ></i>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                )
+            }
             <div className="sign">
-                <p>By Aadarsh Munna &hearts;</p>
+
+                <h2>{user ? user.name : "Guest User"}</h2>
+                <p>{user ? user.email : "Login to save chats"}</p>
+
             </div>
         </section>
     )

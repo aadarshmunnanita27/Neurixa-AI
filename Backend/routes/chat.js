@@ -20,7 +20,18 @@ router.post("/test", async (req, res) => {
     }
 });
 
-router.use(authMiddleware);
+router.use((req, res, next) => {
+
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader) {
+        req.user = null;
+        return next();
+    }
+
+    authMiddleware(req, res, next);
+
+});
 
 //Get all threads
 router.get("/thread", async (req, res) => {
@@ -82,27 +93,54 @@ router.post("/chat", async (req, res) => {
     }
 
     try {
-        let thread = await Thread.findOne({ threadId, user: req.user._id });
+        let thread = null;
+
+        if (req.user) {
+
+            thread = await Thread.findOne({
+                threadId,
+                user: req.user._id
+            });
+
+        }
 
         if (!thread) {
-            //create a new thread in Db
-            thread = new Thread({
+
+            if (req.user) {
+
+                thread = new Thread({
+
+                    threadId,
+
+                    title: message,
+
                     user: req.user._id,
-                threadId,
-                title: message,
-                messages: [{ role: "user", content: message }]
-            });
-        } else {
+
+                    messages: [
+                        {
+                            role: "user",
+                            content: message
+                        }
+                    ]
+
+                });
+
+            }
+
+        }
+        else {
             thread.messages.push({ role: "user", content: message });
         }
 
         const assistantReply = await getGeminiResponse(message);
 
-        thread.messages.push({ role: "assistant", content: assistantReply });
-        thread.updatedAt = new Date();
+        if (thread) {
+            thread.messages.push({ role: "assistant", content: assistantReply });
 
-        await thread.save();
+            thread.updatedAt = new Date();
 
+            await thread.save();
+        }
 
 
         res.json({ reply: assistantReply });

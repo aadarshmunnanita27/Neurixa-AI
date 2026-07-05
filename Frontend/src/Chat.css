@@ -1,37 +1,183 @@
-.chats {
-    width: 100%;
-    max-width: 700px;
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-    box-sizing: border-box;
+
+.chats{
+
+    flex:1;
+
+    width:100%;
+
+    max-width:1000px;
+
+    margin:0 auto;
+
+    padding:20px 25px 120px;
+
+    overflow-y:auto;
+
+    scroll-behavior:smooth;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+.userDiv{
+
+    display:flex;
+
+    justify-content:flex-end;
+
 }
 
-.userDiv {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 0.9rem;
+.gptDiv{
+
+    display:flex;
+
+    justify-content:flex-start;
+
 }
 
+.userMessage{
 
-.gptDiv {
-    text-align: left;
-    font-size: 0.9rem;
+    max-width:70%;
+
+    background:linear-gradient(135deg,#6C63FF,#5A52E0);
+
+    color:white;
+
+    padding:16px 20px;
+
+    border-radius:20px 20px 6px 20px;
+
+    box-shadow:0 10px 25px rgba(108,99,255,.25);
+
 }
 
-.userMessage {
-    background-color: #323232;
-    padding: 10px 20px;
-    border-radius: 14px;
-    margin-left: 15rem;
-    max-width: 500px;
-    width: fit-content;
+.gptMessage{
+
+    max-width:75%;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    padding:16px 20px;
+
+    border-radius:20px 20px 20px 6px;
+
 }
 
-.hljs {
-    border-radius: 14px !important;
+pre{
+
+    border-radius:12px;
+
+    overflow-x:auto;
+
+    margin-top:10px;
+
 }
 
-pre {
-    white-space: pre-wrap;
+code{
+
+    font-size:14px;
+
+}
+
+.hljs{
+
+    border-radius:12px;
+
+}
+
+/* ---------- Welcome ---------- */
+
+.welcomeScreen{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:35px;
+
+    margin-bottom:35px;
+
+}
+
+.welcomeScreen h1{
+
+    font-size:48px;
+
+    color:white;
+
+}
+
+.welcomeScreen p{
+
+    color:#94A3B8;
+
+    margin-top:10px;
+
+}
+
+/* ---------- GPT Message ---------- */
+
+.gptMessage{
+
+    max-width:850px;
+
+    width:fit-content;
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:18px;
+
+    padding:16px 20px;
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+    overflow-wrap:anywhere;
+
+}
+
+/* ---------- Markdown ---------- */
+
+.gptMessage p{
+
+    margin:10px 0;
+
+}
+
+.gptMessage ul,
+
+.gptMessage ol{
+
+    margin-left:25px;
+
+}
+
+.gptMessage pre{
+
+    overflow-x:auto;
+
+    border-radius:12px;
+
+}
+
+.gptMessage code{
+
+    white-space:pre-wrap;
+
 }
