@@ -79,3 +79,6 @@ const connectDB = async() => {
 //     }
 // });
 
+app.get("/", (req, res) => {
+    res.send("Neurixa AI Backend Running 🚀");
+});
