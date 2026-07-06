@@ -221,3 +221,67 @@ box-shadow:
     font-size:13px;
 
 }
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+.sidebar{
+
+    width:100%;
+
+    height:220px;
+
+    min-width:unset;
+
+    overflow-y:auto;
+
+    border-right:none;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+.logo{
+
+    width:92%;
+
+    margin:12px auto;
+
+}
+
+.guestCard{
+
+    width:92%;
+
+    margin:12px auto;
+
+}
+
+.history{
+
+    width:92%;
+
+    margin:10px auto;
+
+}
+
+.bottom{
+
+    position:static;
+
+    margin-top:20px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.logo{
+
+    transform:scale(.92);
+
+}
+
+}

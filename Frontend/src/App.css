@@ -7,3 +7,38 @@
     overflow:hidden;
 
 }
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:1200px){
+
+    .app{
+        display:flex;
+    }
+
+}
+
+@media (max-width:992px){
+
+    .app{
+        display:flex;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .app{
+        flex-direction:column;
+        height:auto;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .app{
+        flex-direction:column;
+    }
+
+}

@@ -181,3 +181,31 @@ code{
     white-space:pre-wrap;
 
 }
+
+@media (max-width:768px){
+
+.chat{
+
+    padding:15px;
+
+}
+
+.message{
+
+    max-width:95%;
+
+    font-size:15px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.message{
+
+    font-size:14px;
+
+}
+
+}

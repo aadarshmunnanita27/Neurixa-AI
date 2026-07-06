@@ -1,0 +1,29 @@
+@media (max-width:768px){
+
+.container{
+
+    width:92%;
+
+    margin:40px auto;
+
+    padding:25px;
+
+}
+
+}
+
+@media (max-width:480px){
+
+.container{
+
+    padding:18px;
+
+}
+
+.container h2{
+
+    font-size:28px;
+
+}
+
+}
