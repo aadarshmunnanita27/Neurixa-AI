@@ -186,12 +186,17 @@ function Sidebar() {
                     </ul>
                 )
             }
-            <div className="sign">
+            {
+    user && (
+        <div className="sign">
 
-                <h2>{user ? user.name : "Guest User"}</h2>
-                <p>{user ? user.email : "Login to save chats"}</p>
+            <h2>{user.name}</h2>
 
-            </div>
+            <p>{user.email}</p>
+
+        </div>
+    )
+}
         </section>
     )
 }
