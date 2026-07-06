@@ -42,13 +42,13 @@ Backend: https://https://neurixa-ai-1.onrender.com
 
 ### Register Page
 
-![ Register Page](./screenshots/register.jpeg)
+![ Register Page](./screenshots/register.png)
 
 ---
 
 ### Profile Icon
 
-![Profile Icon](./screenshots/profileicon.jpeg)
+![Profile Icon](./screenshots/profileicon.png)
 
 
 ---
