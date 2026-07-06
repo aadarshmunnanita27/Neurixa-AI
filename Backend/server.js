@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(cors({
     origin: [
         "http://localhost:5173",
-      "neurixa-ai-chi.vercel.app"
+      "http://neurixa-ai-chi.vercel.app"
     ],
     credentials: true
 }));
