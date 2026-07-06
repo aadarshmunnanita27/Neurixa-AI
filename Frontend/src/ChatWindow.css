@@ -8,7 +8,6 @@
 .navbar{
 
     width:95%;
-
     max-width:1200px;
 
     height:72px;
@@ -26,6 +25,9 @@
     background:#1A2332;
 
     border-radius:16px;
+
+    position: relative;   /* ADD THIS */
+    z-index: 1000;        /* ADD THIS */
 
 }
 .navbar span{
@@ -181,21 +183,21 @@ input:focus{
 
     position:absolute;
 
-    right:30px;
+    top:80px;
 
-    top:85px;
+    right:20px;
 
     width:220px;
 
-    background:rgba(17,28,50,.95);
+    background:#2b3347;
 
-    backdrop-filter:blur(18px);
-
-    border-radius:18px;
-
-    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
 
     overflow:hidden;
+
+    z-index:99999;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.45);
 
 }
 

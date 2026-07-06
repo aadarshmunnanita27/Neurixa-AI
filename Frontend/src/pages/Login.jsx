@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { loginUser } from "../services/authService";
-
+import toast from "react-hot-toast";
 function Login() {
 
     const navigate = useNavigate();
@@ -29,16 +29,23 @@ function Login() {
             const response = await loginUser(formData);
 
             localStorage.setItem("token", response.token);
-
             localStorage.setItem("user", JSON.stringify(response.user));
 
-            alert(response.message);
+            // alert(response.message);
 
-            navigate("/");
+            toast.success(response.message);
+
+            setTimeout(() => {
+
+                window.location.href = "/";
+
+            }, 500);
 
         } catch (err) {
 
-            alert(err.response?.data?.message || "Login Failed");
+            toast.error(
+                err.response?.data?.message || "Login Failed"
+            );
 
         }
 
@@ -73,9 +80,7 @@ function Login() {
                 <br /><br />
 
                 <button type="submit">
-
                     Login
-
                 </button>
 
             </form>
@@ -83,9 +88,7 @@ function Login() {
             <br />
 
             <Link to="/register">
-
                 Don't have an account? Register
-
             </Link>
 
         </div>

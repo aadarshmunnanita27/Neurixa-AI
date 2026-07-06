@@ -11,6 +11,7 @@ function ChatWindow() {
     const [isOpen, setIsOpen] = useState(false);
 
     const user = JSON.parse(localStorage.getItem("user"));
+    const isLoggedIn = !!localStorage.getItem("token");
 
     const getReply = async () => {
         setLoading(true);
@@ -94,7 +95,7 @@ function ChatWindow() {
 
         setIsOpen(false);
 
-        window.dispatchEvent(new Event("storage"));
+        window.location.href = "/";
 
     }
 
@@ -107,21 +108,7 @@ function ChatWindow() {
 
     }
 
-    const [isLoggedIn, setIsLoggedIn] = useState(
-        !!localStorage.getItem("token")
-    );
-
-    useEffect(() => {
-
-        const update = () => {
-            setIsLoggedIn(!!localStorage.getItem("token"));
-        };
-
-        window.addEventListener("storage", update);
-
-        return () => window.removeEventListener("storage", update);
-
-    }, []);
+  
 
     return (
         <div className="chatWindow">

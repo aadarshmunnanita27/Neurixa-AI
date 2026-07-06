@@ -32,20 +32,26 @@ function App() {
         prevChats,
         setPrevChats,
         allThreads,
-        setAllThreads,
+        setAllThreads
     };
 
     return (
+
         <Routes>
 
             <Route
                 path="/"
                 element={
                     <div className="app">
+
                         <MyContext.Provider value={providerValues}>
+
                             <Sidebar />
+
                             <ChatWindow />
+
                         </MyContext.Provider>
+
                     </div>
                 }
             />
@@ -69,7 +75,9 @@ function App() {
             />
 
         </Routes>
+
     );
+
 }
 
 export default App;
