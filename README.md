@@ -16,39 +16,39 @@ Backend: https://https://neurixa-ai-1.onrender.com
 
 ## 📸 Screenshots
 
-### Home Page
+### Guest chat window
 
-![Home Page](./screenshots/home.png)
-
----
-
-### Listing Details
-
-![Listing Details](./screenshots/listing_details.png)
+![ Guest chat window](./screenshots/Chatwindow_Guestmode .png)
 
 ---
 
-### Create Listing
+###  User chat window
 
-![Create Listing](./screenshots/create_listing.png)
-
----
-
-### Wishlist
-
-![Wishlist](./screenshots/wishlist.png)
+![ User chat window](./screenshots/Chatwindow_usermode.png)
 
 ---
 
-### Mobile View
+### chat history
 
-![Mobile View](./screenshots/mobileview.jpeg)
+![chat history](./screenshots/chathistory.png)
 
 ---
 
-### Mobile View
+### Login Page
 
-![Mobile View](./screenshots/mobileview2.jpeg)
+![ Login Page](./screenshots/login.png)
+
+---
+
+### Register Page
+
+![ Register Page](./screenshots/register.jpeg)
+
+---
+
+### Profile Icon
+
+![Profile Icon](./screenshots/profileicon.jpeg)
 
 
 ---
@@ -195,10 +195,6 @@ VITE_API_URL=http://localhost:8080/api
 **Aadarsh Munna**
 
 B.Tech CSE | NIT Agartala
-
-GitHub: https://github.com/your-github
-
-LinkedIn: https://linkedin.com/in/your-linkedin
 
 ---
 
