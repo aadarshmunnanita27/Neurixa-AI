@@ -34,7 +34,7 @@ function Login() {
 
             alert(response.message);
 
-            navigate("/chat");
+            navigate("/");
 
         } catch (err) {
 
