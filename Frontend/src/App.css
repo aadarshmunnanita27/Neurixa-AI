@@ -25,12 +25,11 @@
     }
 
 }
-
 @media (max-width:768px){
 
     .app{
-        flex-direction:column;
-        height:auto;
+        flex-direction:row;
+        height:100vh;
     }
 
 }
