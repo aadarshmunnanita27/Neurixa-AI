@@ -2,7 +2,7 @@ import "./App.css";
 import Sidebar from "./Sidebar.jsx";
 import ChatWindow from "./ChatWindow.jsx";
 import { MyContext } from "./MyContext.jsx";
-import { useState,useeffect } from "react";
+import { useState, useEffect } from "react";
 
 import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login.jsx";
@@ -19,18 +19,18 @@ function App() {
     const [prevChats, setPrevChats] = useState([]);
     const [newChat, setNewChat] = useState(true);
     const [allThreads, setAllThreads] = useState([]);
-    
+
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-useEffect(() => {
-    const handleResize = () => {
-        setIsMobile(window.innerWidth <= 768);
-    };
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
 
-    window.addEventListener("resize", handleResize);
+        window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
-}, []);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     const providerValues = {
         prompt,
@@ -58,11 +58,11 @@ useEffect(() => {
 
                         <MyContext.Provider value={providerValues}>
 
-    {!isMobile && <Sidebar />}
+                            {!isMobile && <Sidebar />}
 
-    <ChatWindow />
+                            <ChatWindow />
 
-</MyContext.Provider>
+                        </MyContext.Provider>
 
                     </div>
                 }
