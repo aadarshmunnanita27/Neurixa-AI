@@ -1,140 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url(''https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: ''Poppins'', sans-serif;
 }
 
-:root{
-
-    --bg:#07111f;
-    --sidebar:#0f172a;
-    --card:#111c32;
-    --primary:#6C63FF;
-    --secondary:#00D4FF;
-    --text:#F8FAFC;
-    --text2:#94A3B8;
-    --border:rgba(255,255,255,.08);
-
+:root {
+  --bg: #07111f;
+  --sidebar: #0f172a;
+  --card: #111c32;
+  --primary: #6C63FF;
+  --secondary: #00D4FF;
+  --text: #F8FAFC;
+  --text2: #94A3B8;
+  --border: rgba(255, 255, 255, .08);
 }
 
-body{
+html, body, #root {
+  min-height: 100%;
+}
 
-    background:
-    radial-gradient(circle at top left,#6C63FF22,transparent 40%),
-    radial-gradient(circle at bottom right,#00D4FF22,transparent 35%),
+body {
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, .18), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, .16), transparent 28%),
     var(--bg);
-
-    color:var(--text);
-
-    overflow:hidden;
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
-::-webkit-scrollbar{
-
-    width:8px;
-
+button, input {
+  font: inherit;
 }
 
-::-webkit-scrollbar-track{
-
-    background:#0F172A;
-
+a {
+  color: inherit;
 }
 
-::-webkit-scrollbar-thumb{
-
-    background:#6C63FF;
-
-    border-radius:20px;
-
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-::-webkit-scrollbar-thumb:hover{
-
-    background:#00D4FF;
-
+::-webkit-scrollbar-track {
+  background: #0F172A;
 }
 
-/* ===========================
-   Tablet
-=========================== */
-
-@media(max-width:992px){
-
-.sidebar{
-
-    width:250px;
-
+::-webkit-scrollbar-thumb {
+  background: #6C63FF;
+  border-radius: 20px;
 }
 
-.chatInput{
-
-    width:95%;
-
+::-webkit-scrollbar-thumb:hover {
+  background: #00D4FF;
 }
 
-.inputBox{
-
-    max-width:95%;
-
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 280px;
+    min-width: 280px;
+  }
 }
 
+@media (max-width: 992px) {
+  .sidebar {
+    width: 250px;
+    min-width: 250px;
+  }
+
+  .chatInput {
+    width: 95%;
+  }
+
+  .inputBox {
+    max-width: 95%;
+  }
 }
 
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
 
-
-
-@media (max-width:1200px){
-
-.sidebar{
-
-    width:240px;
-    min-width:240px;
-
+  .navbar span {
+    font-size: 22px;
+  }
 }
 
-}
+@media (max-width: 480px) {
+  .navbar span {
+    font-size: 18px;
+  }
 
-@media (max-width:992px){
+  .welcomeScreen h1 {
+    font-size: 32px;
+  }
 
-.sidebar{
-
-    width:220px;
-    min-width:220px;
-
-}
-
-.navbar span{
-
-    font-size:28px;
-
-}
-
-}
-
-
-
-@media (max-width:480px){
-
-.navbar span{
-
-    font-size:18px;
-
-}
-
-.welcomeScreen h1{
-
-    font-size:34px;
-
-}
-
-.welcomeScreen p{
-
-    font-size:15px;
-
-}
-
+  .welcomeScreen p {
+    font-size: 15px;
+  }
 }

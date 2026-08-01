@@ -1,43 +1,14 @@
-.app{
-
-    display:flex;
-
-    height:100vh;
-
-    overflow:hidden;
-
+.app {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at top left, rgba(99,102,241,.18), transparent 24%),
+              radial-gradient(circle at bottom right, rgba(14,165,233,.16), transparent 28%),
+              linear-gradient(180deg, #07111F 0%, #0B1220 100%);
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width:1200px){
-
-    .app{
-        display:flex;
-    }
-
-}
-
-@media (max-width:992px){
-
-    .app{
-        display:flex;
-    }
-
-}
-@media (max-width:768px){
-
-    .app{
-        flex-direction:row;
-        height:100vh;
-    }
-
-}
-@media (max-width:480px){
-
-    .app{
-        flex-direction:row;
-        height:100vh;
-    }
-
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
 }

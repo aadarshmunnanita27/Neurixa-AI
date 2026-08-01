@@ -1,310 +1,166 @@
-.history li:hover{
-
-    background:rgba(255,255,255,.08);
-
+.chatWindow {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(7, 17, 31, .95);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
 }
-/* navbar */
 
-.navbar{
-
-    width:95%;
-    max-width:1200px;
-
-    height:72px;
-
-    margin:18px auto;
-
-    padding:0 24px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    background:#1A2332;
-
-    border-radius:16px;
-
-    position: relative;   /* ADD THIS */
-    z-index: 1000;        /* ADD THIS */
-
+.navbar {
+  width: 100%;
+  padding: 18px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 255, 255, .06);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .18);
+  position: relative;
+  z-index: 1000;
 }
-.navbar span{
 
-    flex:1;
-
-    text-align:center;
-
-    font-size:22px;
-
-    font-weight:600;
-
+.navbar span {
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f8fafc;
 }
+
 .userIconDiv {
-    margin: 1rem 2rem;
+  cursor: pointer;
 }
 
-.userIcon{
-
-    width:42px;
-
-    height:42px;
-
-    font-size:18px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:linear-gradient(135deg,#6366F1,#0EA5E9);
-
-}
-.userIcon:hover{
-
-    transform:scale(1.08);
-
-    box-shadow:0 0 20px rgba(108,99,255,.45);
-
-}
-/* chat input */
-.chatInput{
-
-    width:100%;
-
-    padding:18px 0;
-
-    margin-top:auto;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-}
-.inputBox{
-
-    width:100%;
-
-    max-width:900px;
-
-    position:relative;
-
-    margin:0 auto;
-
+.userIcon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366F1, #0EA5E9);
+  color: #fff;
+  font-size: 18px;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.inputBox:hover{
-
-    transform:translateY(-3px);
-
+.userIcon:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 24px rgba(108, 99, 255, .45);
 }
 
-input{
-
-    width:100%;
-
-    padding:18px 75px 18px 22px;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:18px;
-
-    background:#1A2332;
-
-    color:white;
-
-    font-size:17px;
-
-}
-input:focus{
-
-    border:1px solid #6C63FF;
-
-    box-shadow:0 0 25px rgba(108,99,255,.35);
-
+.dropDown {
+  position: absolute;
+  top: 78px;
+  right: 28px;
+  min-width: 220px;
+  background: rgba(13, 22, 39, .98);
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 18px;
+  overflow: hidden;
+  z-index: 99999;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .35);
 }
 
-
-#submit{
-
-    position:absolute;
-
-    right:12px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    width:46px;
-
-    height:46px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    background:linear-gradient(135deg,#6366F1,#0EA5E9);
-
-    cursor:pointer;
-
-    transition:.25s;
-
+.dropDownItem {
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: background .2s ease;
 }
 
-#submit:hover{
+.dropDownItem:hover {
+  background: rgba(255, 255, 255, .07);
+}
 
-    transform:translateY(-50%) scale(1.08);
+.chatInput {
+  width: 100%;
+  padding: 20px 28px 26px;
+  background: rgba(7, 17, 31, .95);
+  border-top: 1px solid rgba(255, 255, 255, .08);
+}
 
-    box-shadow:0 0 20px rgba(0,212,255,.45);
+.inputBox {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+}
 
+input {
+  width: 100%;
+  padding: 18px 72px 18px 22px;
+  border: none;
+  outline: none;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .06);
+  color: #f8fafc;
+  font-size: 1rem;
+  box-shadow: inset 0 4px 20px rgba(0, 0, 0, .18);
+  transition: border .2s ease, box-shadow .2s ease;
+}
+
+input::placeholder {
+  color: rgba(248, 250, 252, .55);
+}
+
+input:focus {
+  border: 1px solid rgba(99, 102, 241, .7);
+  box-shadow: 0 0 0 6px rgba(99, 102, 241, .12);
+}
+
+#submit {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6366F1, #0EA5E9);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+#submit:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 212, 255, .35);
 }
 
 .info {
-    font-size: 0.8rem;
-    padding: 0.5rem;
-    color: #b4b4b4;
+  font-size: 0.85rem;
+  padding: 0.75rem 0 0;
+  color: #a5b4fc;
+  text-align: center;
 }
 
-/* dropdown css */
-
-.dropDown{
-
-    position:absolute;
-
-    top:80px;
-
-    right:20px;
-
-    width:220px;
-
-    background:#2b3347;
-
-    border-radius:14px;
-
-    overflow:hidden;
-
-    z-index:99999;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.45);
-
+.loaderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
 }
 
-.dropDownItem{
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+  }
 
-    padding:15px 18px;
+  .chatInput {
+    padding: 16px 20px 24px;
+  }
 
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-.dropDownItem:hover{
-
-    background:rgba(255,255,255,.08);
-
-}
-
-.chatWindow{
-
-    flex:1;
-
-    height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    overflow:hidden;
-
-    background:#0B1220;
-
-}
-
-.loaderContainer{
-
-    width:100%;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:30px 0;
-
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width:768px){
-
-.chatWindow{
-    flex:1;
-    width:auto;
-    height:100vh;
-    min-width:0;
-}
-
-.navbar{
-    width:95%;
-    height:60px;
-    margin:10px auto;
-    padding:0 12px;
-    border-radius:12px;
-}
-
-.navbar span{
-    font-size:18px;
-}
-
-.userIconDiv{
-    margin:0;
-}
-
-.userIcon{
-    width:38px;
-    height:38px;
-    font-size:16px;
-}
-
-.chatInput{
-    width:100%;
-    padding:12px;
-}
-
-.inputBox{
-    width:100%;
-}
-
-input{
-    font-size:15px;
-    padding:14px 55px 14px 16px;
-}
-
-#submit{
-    width:40px;
-    height:40px;
-    right:8px;
-}
-
-.dropDown{
-    width:190px;
-    right:8px;
-    top:65px;
-}
-
+  #submit {
+    right: 14px;
+  }
 }

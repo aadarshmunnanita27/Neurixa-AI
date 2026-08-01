@@ -1,211 +1,129 @@
-
-.chats{
-
-    flex:1;
-
-    width:100%;
-
-    max-width:1000px;
-
-    margin:0 auto;
-
-    padding:20px 25px 120px;
-
-    overflow-y:auto;
-
-    scroll-behavior:smooth;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-}
-.userDiv{
-
-    display:flex;
-
-    justify-content:flex-end;
-
+.chats {
+  flex: 1;
+  width: 100%;
+  padding: 24px 28px 12px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.gptDiv{
-
-    display:flex;
-
-    justify-content:flex-start;
-
+.userDiv {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.userMessage{
-
-    max-width:70%;
-
-    background:linear-gradient(135deg,#6C63FF,#5A52E0);
-
-    color:white;
-
-    padding:16px 20px;
-
-    border-radius:20px 20px 6px 20px;
-
-    box-shadow:0 10px 25px rgba(108,99,255,.25);
-
+.gptDiv {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.gptMessage{
-
-    max-width:75%;
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    color:white;
-
-    padding:16px 20px;
-
-    border-radius:20px 20px 20px 6px;
-
+.userMessage {
+  max-width: 72%;
+  background: linear-gradient(135deg, #6366F1, #0EA5E9);
+  color: #fff;
+  padding: 18px 22px;
+  border-radius: 22px 22px 6px 22px;
+  box-shadow: 0 24px 70px rgba(99, 102, 241, .18);
+  line-height: 1.7;
+  word-break: break-word;
 }
 
-pre{
-
-    border-radius:12px;
-
-    overflow-x:auto;
-
-    margin-top:10px;
-
+.gptMessage {
+  max-width: 78%;
+  width: fit-content;
+  background: rgba(255, 255, 255, .06);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, .12);
+  color: #e2e8f0;
+  padding: 18px 22px;
+  border-radius: 22px 22px 22px 6px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .18);
+  line-height: 1.8;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
-code{
-
-    font-size:14px;
-
+pre {
+  border-radius: 14px;
+  overflow-x: auto;
+  margin-top: 12px;
+  background: rgba(15, 23, 42, .9);
+  padding: 16px;
 }
 
-.hljs{
-
-    border-radius:12px;
-
+code {
+  font-size: 14px;
 }
 
-/* ---------- Welcome ---------- */
-
-.welcomeScreen{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin-top:35px;
-
-    margin-bottom:35px;
-
+.hljs {
+  border-radius: 12px;
 }
 
-.welcomeScreen h1{
-
-    font-size:48px;
-
-    color:white;
-
+.welcomeScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 28px;
+  padding: 36px 28px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .05);
+  border: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .18);
+  text-align: center;
 }
 
-.welcomeScreen p{
-
-    color:#94A3B8;
-
-    margin-top:10px;
-
+.welcomeScreen h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 12px;
 }
 
-/* ---------- GPT Message ---------- */
-
-.gptMessage{
-
-    max-width:850px;
-
-    width:fit-content;
-
-    background:rgba(255,255,255,.05);
-
-    border-radius:18px;
-
-    padding:16px 20px;
-
-    line-height:1.8;
-
-    white-space:pre-wrap;
-
-    word-break:break-word;
-
-    overflow-wrap:anywhere;
-
+.welcomeScreen p {
+  color: #cbd5e1;
+  margin-top: 10px;
+  line-height: 1.75;
 }
 
-/* ---------- Markdown ---------- */
-
-.gptMessage p{
-
-    margin:10px 0;
-
+.gptMessage p {
+  margin: 10px 0;
 }
 
 .gptMessage ul,
-
-.gptMessage ol{
-
-    margin-left:25px;
-
+.gptMessage ol {
+  margin-left: 22px;
 }
 
-.gptMessage pre{
-
-    overflow-x:auto;
-
-    border-radius:12px;
-
+.gptMessage pre {
+  overflow-x: auto;
+  border-radius: 12px;
 }
 
-.gptMessage code{
-
-    white-space:pre-wrap;
-
+.gptMessage code {
+  white-space: pre-wrap;
 }
 
-@media (max-width:768px){
+@media (max-width: 768px) {
+  .chats {
+    padding: 18px 18px 12px;
+  }
 
-.chat{
-
-    padding:15px;
-
+  .userMessage,
+  .gptMessage {
+    max-width: 100%;
+    font-size: 0.96rem;
+  }
 }
 
-.message{
+@media (max-width: 480px) {
+  .welcomeScreen {
+    margin: 18px 16px;
+    padding: 28px 22px;
+  }
 
-    max-width:95%;
-
-    font-size:15px;
-
-}
-
-}
-
-@media (max-width:480px){
-
-.message{
-
-    font-size:14px;
-
-}
-
+  .welcomeScreen h1 {
+    font-size: 2.4rem;
+  }
 }
