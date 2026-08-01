@@ -1,10 +1,10 @@
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "./MyContext.jsx";
 import { v1 as uuidv1 } from "uuid";
 const API_URL = import.meta.env.VITE_API_URL;
 import logo from "./assets/logo.png";
-// import { useContext, useEffect, useState } from "react";
 
 function Sidebar() {
     const { allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats } = useContext(MyContext);
@@ -151,15 +151,13 @@ function Sidebar() {
                 !localStorage.getItem("token") && (
 
                     <div className="guestCard">
-
-                        <h3>Guest Mode</h3>
-
-                        <p>
-
-                            Login to save chat history permanently.
-
-                        </p>
-
+                        <div className="guestTag">
+                            <i className="fa-solid fa-user-astronaut"></i>
+                            Guest mode
+                        </div>
+                        <h3>Temporary access, premium feel</h3>
+                        <p>Chat freely as a guest. Login to keep your history, restore previous threads, and personalize your workspace.</p>
+                        <Link to="/login" className="guestAction">Login to save history</Link>
                     </div>
 
                 )
