@@ -79,7 +79,7 @@ function Login() {
                             required
                         />
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit" className="authButton">Login</button>
                 </form>
                 <div className="authFooter">
                     <span>New to Neurixa?</span> <Link to="/register">Create an account</Link>

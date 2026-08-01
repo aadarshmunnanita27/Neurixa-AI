@@ -92,7 +92,7 @@ function Register() {
                             required
                         />
                     </div>
-                    <button type="submit">Register</button>
+                    <button type="submit" className="authButton">Register</button>
                 </form>
                 <div className="authFooter">
                     <span>Already have an account?</span> <Link to="/login">Login instead</Link>

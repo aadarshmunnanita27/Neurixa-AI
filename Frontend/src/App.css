@@ -2,9 +2,9 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
-  background: radial-gradient(circle at top left, rgba(37, 99, 235, .14), transparent 24%),
-              radial-gradient(circle at bottom right, rgba(14, 165, 233, .16), transparent 30%),
-              linear-gradient(180deg, #060a16 0%, #0b1326 100%);
+  background: #060b16;
+  background-image: radial-gradient(circle at 14% 14%, rgba(96, 165, 250, .08), transparent 14%),
+                    radial-gradient(circle at 86% 12%, rgba(168, 85, 247, .05), transparent 10%);
 }
 
 @media (max-width: 768px) {
