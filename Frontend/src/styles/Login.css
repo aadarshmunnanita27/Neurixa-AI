@@ -58,47 +58,22 @@
   line-height: 1.75;
 }
 
-.authSummary {
+.authHeader {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
 }
 
-.authChip {
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .04);
-  color: #cbd5e1;
-  font-size: 0.9rem;
-  border: 1px solid rgba(148, 163, 184, .10);
-}
-
-.authStats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 14px;
-}
-
-.statCard {
-  padding: 16px 18px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, .04);
-  border: 1px solid rgba(148, 163, 184, .10);
-}
-
-.statCard span {
-  display: block;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.statCard p {
-  margin: 0;
-  color: #cbd5e1;
-  font-size: 0.95rem;
-  line-height: 1.6;
+.authPanel {
+  width: min(520px, 100%);
+  padding: 42px 40px;
+  border-radius: 32px;
+  background: rgba(12, 19, 33, .96);
+  border: 1px solid rgba(90, 103, 161, .12);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, .22);
+  backdrop-filter: blur(24px);
+  position: relative;
 }
 
 .authForm {

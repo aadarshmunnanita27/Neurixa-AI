@@ -42,21 +42,6 @@ function Register() {
                         <h2>Create your Neurixa account</h2>
                         <p>Register with a simple, modern form built for speed and clarity.</p>
                     </div>
-                    <div className="authSummary">
-                        <span className="authChip">Quick signup</span>
-                        <span className="authChip">Modern UI</span>
-                        <span className="authChip">Ready to use</span>
-                    </div>
-                    <div className="authStats">
-                        <div className="statCard">
-                            <span>Streamlined fields</span>
-                            <p>Clear input groups make the signup flow feel effortless.</p>
-                        </div>
-                        <div className="statCard">
-                            <span>Strong readability</span>
-                            <p>High contrast and clean typography help guide every step.</p>
-                        </div>
-                    </div>
                 </div>
                 <form className="authForm" onSubmit={handleSubmit}>
                     <div className="inputGroup">

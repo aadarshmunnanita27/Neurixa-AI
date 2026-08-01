@@ -40,21 +40,6 @@ function Login() {
                         <h2>Secure access to your AI workspace</h2>
                         <p>Fast sign-in with a modern interface designed for clarity and reliability.</p>
                     </div>
-                    <div className="authSummary">
-                        <span className="authChip">Fast access</span>
-                        <span className="authChip">Clean design</span>
-                        <span className="authChip">Secure session</span>
-                    </div>
-                    <div className="authStats">
-                        <div className="statCard">
-                            <span>Clear workflow</span>
-                            <p>Only the fields you need, arranged for quick completion.</p>
-                        </div>
-                        <div className="statCard">
-                            <span>Trusted styling</span>
-                            <p>Soft contrast, precise spacing, and polished card structure.</p>
-                        </div>
-                    </div>
                 </div>
                 <form className="authForm" onSubmit={handleSubmit}>
                     <div className="inputGroup">
