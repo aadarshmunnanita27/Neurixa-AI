@@ -37,22 +37,22 @@ function Login() {
                 <div className="authHeader">
                     <span className="brandBadge">Neurixa AI</span>
                     <div className="headlineWrap">
-                        <h2>Secure login for your workspace</h2>
-                        <p>Access clean, polished chat tools with a layout built to look sharp in demos.</p>
+                        <h2>Secure access to your AI workspace</h2>
+                        <p>Fast sign-in with a modern interface designed for clarity and reliability.</p>
                     </div>
                     <div className="authSummary">
-                        <span className="authChip">Fast login</span>
-                        <span className="authChip">Clean interface</span>
-                        <span className="authChip">Presentation-ready</span>
+                        <span className="authChip">Fast access</span>
+                        <span className="authChip">Clean design</span>
+                        <span className="authChip">Secure session</span>
                     </div>
                     <div className="authStats">
                         <div className="statCard">
-                            <span>Minimal distraction</span>
-                            <p>Only the inputs and info you need, centered for clarity.</p>
+                            <span>Clear workflow</span>
+                            <p>Only the fields you need, arranged for quick completion.</p>
                         </div>
                         <div className="statCard">
-                            <span>Balanced contrast</span>
-                            <p>Soft navy tones with bright action highlights.</p>
+                            <span>Trusted styling</span>
+                            <p>Soft contrast, precise spacing, and polished card structure.</p>
                         </div>
                     </div>
                 </div>
@@ -87,13 +87,13 @@ function Login() {
             </div>
             <div className="authAside">
                 <div className="asideCard">
-                    <div className="asideLabel">Designed for recruiters</div>
-                    <h3>Polished first impression</h3>
-                    <p>Minimal noise, refined dark panels, and a deliberate layout that feels intentional rather than generic.</p>
+                    <div className="asideLabel">Workspace ready</div>
+                    <h3>Refined access panel</h3>
+                    <p>A calm, focused login experience with intuitive spacing and subtle contrast.</p>
                     <div className="asideFeatureList">
-                        <p>Balanced typography</p>
-                        <p>Soft glowing accents</p>
-                        <p>Strong card-based structure</p>
+                        <p>Fast field focus</p>
+                        <p>Soft visual hierarchy</p>
+                        <p>Minimal distraction</p>
                     </div>
                 </div>
             </div>

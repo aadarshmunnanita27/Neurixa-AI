@@ -40,21 +40,21 @@ function Register() {
                     <span className="brandBadge">Neurixa AI</span>
                     <div className="headlineWrap">
                         <h2>Create your Neurixa account</h2>
-                        <p>A fast, polished signup experience designed to impress during portfolio reviews.</p>
+                        <p>Register with a simple, modern form built for speed and clarity.</p>
                     </div>
                     <div className="authSummary">
-                        <span className="authChip">Fast signup</span>
-                        <span className="authChip">Sharp layout</span>
-                        <span className="authChip">Portfolio finish</span>
+                        <span className="authChip">Quick signup</span>
+                        <span className="authChip">Modern UI</span>
+                        <span className="authChip">Ready to use</span>
                     </div>
                     <div className="authStats">
                         <div className="statCard">
-                            <span>Strong spacing</span>
-                            <p>Clear field grouping to make the form feel premium.</p>
+                            <span>Streamlined fields</span>
+                            <p>Clear input groups make the signup flow feel effortless.</p>
                         </div>
                         <div className="statCard">
-                            <span>Focused clarity</span>
-                            <p>Low noise, high readability, and crisp button styling.</p>
+                            <span>Strong readability</span>
+                            <p>High contrast and clean typography help guide every step.</p>
                         </div>
                     </div>
                 </div>
@@ -100,13 +100,13 @@ function Register() {
             </div>
             <div className="authAside">
                 <div className="asideCard">
-                    <div className="asideLabel">Made for interviews</div>
-                    <h3>Stand out in your portfolio</h3>
-                    <p>A smooth signup panel with balanced contrast and a frame that feels intentional rather than generic.</p>
+                    <div className="asideLabel">Built for teams</div>
+                    <h3>Reliable account setup</h3>
+                    <p>A balanced signup panel with crisp spacing and secure interaction cues.</p>
                     <div className="asideFeatureList">
-                        <p>Understated visual polish</p>
-                        <p>Structured field layout</p>
-                        <p>Attention to spacing</p>
+                        <p>Focused input flow</p>
+                        <p>High readability</p>
+                        <p>Clean structure</p>
                     </div>
                 </div>
             </div>
