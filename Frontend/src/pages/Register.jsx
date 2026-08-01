@@ -5,9 +5,7 @@ import { registerUser } from "../services/authService";
 import toast from "react-hot-toast";
 
 function Register() {
-
     const navigate = useNavigate();
-
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -23,7 +21,6 @@ function Register() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
             const response = await registerUser(formData);
             toast.success(response.message);
@@ -41,12 +38,24 @@ function Register() {
             <div className="authPanel">
                 <div className="authHeader">
                     <span className="brandBadge">Neurixa AI</span>
-                    <h2>Create your account</h2>
-                    <p>Build a standout project with a polished signup experience built for recruiters.</p>
+                    <div className="headlineWrap">
+                        <h2>Create your Neurixa account</h2>
+                        <p>A fast, polished signup experience designed to impress during portfolio reviews.</p>
+                    </div>
                     <div className="featurePills">
-                        <span className="featurePill">Clean form flow</span>
-                        <span className="featurePill">AI-first experience</span>
-                        <span className="featurePill">Strong visual polish</span>
+                        <span className="featurePill">Clear flow</span>
+                        <span className="featurePill">Clean structure</span>
+                        <span className="featurePill">Recruiter-ready</span>
+                    </div>
+                    <div className="authStats">
+                        <div className="statCard">
+                            <span>Soft spacing</span>
+                            <p>Comfortable fields for quick scanning.</p>
+                        </div>
+                        <div className="statCard">
+                            <span>Clean focus</span>
+                            <p>Sharp contrasts with subtle depth.</p>
+                        </div>
                     </div>
                 </div>
                 <form className="authForm" onSubmit={handleSubmit}>
@@ -91,9 +100,14 @@ function Register() {
             </div>
             <div className="authAside">
                 <div className="asideCard">
-                    <span className="accentLabel">Premium UI</span>
-                    <h3>Eye-catching signup flow</h3>
-                    <p>Use clean spacing, strong contrast, and clear form structure to create an impressive front-end presentation.</p>
+                    <div className="asideLabel">Made for interviews</div>
+                    <h3>Stand out in your portfolio</h3>
+                    <p>A smooth signup panel with balanced contrast and a frame that feels intentional rather than generic.</p>
+                    <div className="asideFeatureList">
+                        <p>Understated visual polish</p>
+                        <p>Structured field layout</p>
+                        <p>Attention to spacing</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,9 +5,7 @@ import { loginUser } from "../services/authService";
 import toast from "react-hot-toast";
 
 function Login() {
-
     const navigate = useNavigate();
-
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -22,7 +20,6 @@ function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
             const response = await loginUser(formData);
             localStorage.setItem("token", response.token);
@@ -39,12 +36,24 @@ function Login() {
             <div className="authPanel">
                 <div className="authHeader">
                     <span className="brandBadge">Neurixa AI</span>
-                    <h2>Sign in to your AI workspace</h2>
-                    <p>Welcome back! Access your personalized assistant and polished prompt history.</p>
+                    <div className="headlineWrap">
+                        <h2>Secure login for your workspace</h2>
+                        <p>Access clean, polished chat tools with a layout built to look sharp in demos.</p>
+                    </div>
                     <div className="featurePills">
-                        <span className="featurePill">Modern dashboard</span>
-                        <span className="featurePill">Secure auth</span>
-                        <span className="featurePill">Resume-ready UI</span>
+                        <span className="featurePill">Clean access</span>
+                        <span className="featurePill">Strong structure</span>
+                        <span className="featurePill">Resume ready</span>
+                    </div>
+                    <div className="authStats">
+                        <div className="statCard">
+                            <span>Calm flow</span>
+                            <p>Simple form with professional spacing.</p>
+                        </div>
+                        <div className="statCard">
+                            <span>Sharp visuals</span>
+                            <p>Dark theme polished for presentation.</p>
+                        </div>
                     </div>
                 </div>
                 <form className="authForm" onSubmit={handleSubmit}>
@@ -78,9 +87,14 @@ function Login() {
             </div>
             <div className="authAside">
                 <div className="asideCard">
-                    <span className="accentLabel">Professional Design</span>
-                    <h3>Recruiter-ready layout</h3>
-                    <p>Showcase a polished application with sharp typography, subtle glassmorphism, and an elegant dark gradient theme.</p>
+                    <div className="asideLabel">Designed for recruiters</div>
+                    <h3>Polished first impression</h3>
+                    <p>Minimal noise, refined dark panels, and a deliberate layout that feels intentional rather than generic.</p>
+                    <div className="asideFeatureList">
+                        <p>Balanced typography</p>
+                        <p>Soft glowing accents</p>
+                        <p>Strong card-based structure</p>
+                    </div>
                 </div>
             </div>
         </div>
