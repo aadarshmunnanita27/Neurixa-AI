@@ -40,19 +40,19 @@ function Login() {
                         <h2>Secure login for your workspace</h2>
                         <p>Access clean, polished chat tools with a layout built to look sharp in demos.</p>
                     </div>
-                    <div className="featurePills">
-                        <span className="featurePill">Clean access</span>
-                        <span className="featurePill">Strong structure</span>
-                        <span className="featurePill">Resume ready</span>
+                    <div className="authSummary">
+                        <span className="authChip">Fast login</span>
+                        <span className="authChip">Clean interface</span>
+                        <span className="authChip">Presentation-ready</span>
                     </div>
                     <div className="authStats">
                         <div className="statCard">
-                            <span>Calm flow</span>
-                            <p>Simple form with professional spacing.</p>
+                            <span>Minimal distraction</span>
+                            <p>Only the inputs and info you need, centered for clarity.</p>
                         </div>
                         <div className="statCard">
-                            <span>Sharp visuals</span>
-                            <p>Dark theme polished for presentation.</p>
+                            <span>Balanced contrast</span>
+                            <p>Soft navy tones with bright action highlights.</p>
                         </div>
                     </div>
                 </div>

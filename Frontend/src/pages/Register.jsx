@@ -42,19 +42,19 @@ function Register() {
                         <h2>Create your Neurixa account</h2>
                         <p>A fast, polished signup experience designed to impress during portfolio reviews.</p>
                     </div>
-                    <div className="featurePills">
-                        <span className="featurePill">Clear flow</span>
-                        <span className="featurePill">Clean structure</span>
-                        <span className="featurePill">Recruiter-ready</span>
+                    <div className="authSummary">
+                        <span className="authChip">Fast signup</span>
+                        <span className="authChip">Sharp layout</span>
+                        <span className="authChip">Portfolio finish</span>
                     </div>
                     <div className="authStats">
                         <div className="statCard">
-                            <span>Soft spacing</span>
-                            <p>Comfortable fields for quick scanning.</p>
+                            <span>Strong spacing</span>
+                            <p>Clear field grouping to make the form feel premium.</p>
                         </div>
                         <div className="statCard">
-                            <span>Clean focus</span>
-                            <p>Sharp contrasts with subtle depth.</p>
+                            <span>Focused clarity</span>
+                            <p>Low noise, high readability, and crisp button styling.</p>
                         </div>
                     </div>
                 </div>
