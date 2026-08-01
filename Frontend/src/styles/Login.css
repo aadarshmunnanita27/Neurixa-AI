@@ -1,85 +1,263 @@
-.container {
-  width: 100%;
-  max-width: 420px;
-  margin: 70px auto;
-  padding: 36px 32px;
-  background: rgba(255, 255, 255, .05);
-  border: 1px solid rgba(255, 255, 255, .1);
-  border-radius: 28px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, .2);
+.authPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, rgba(124, 58, 237, .18), transparent 25%),
+              radial-gradient(circle at bottom right, rgba(14, 165, 233, .14), transparent 30%),
+              linear-gradient(180deg, #050815 0%, #0D1221 100%);
 }
 
-.container h2 {
-  font-size: 2.2rem;
-  margin-bottom: 16px;
-  text-align: center;
+.authPage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(96, 165, 250, .24), transparent 16%),
+              radial-gradient(circle at 85% 10%, rgba(168, 85, 247, .16), transparent 12%),
+              radial-gradient(circle at 70% 80%, rgba(6, 182, 212, .18), transparent 14%);
+  pointer-events: none;
+}
+
+.authPanel {
+  width: min(560px, 100%);
+  padding: 42px;
+  border-radius: 34px;
+  background: rgba(15, 23, 42, .96);
+  border: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, .26);
+  backdrop-filter: blur(28px);
+  position: relative;
+  z-index: 1;
+}
+
+.authPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(124, 58, 237, .42), rgba(14, 165, 233, .28));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+.authHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 34px;
+}
+
+.brandBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7C3AED, #0EA5E9);
   color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 18px 38px rgba(99, 102, 241, .2);
 }
 
-.container form {
+.authHeader h2 {
+  font-size: 2.4rem;
+  line-height: 1.05;
+  background: linear-gradient(90deg, #A78BFA, #38BDF8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.authHeader p {
+  max-width: 520px;
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.authForm {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  margin-top: 18px;
 }
 
-.container input {
+.featurePills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.featurePill {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .06);
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputGroup label {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+input {
   width: 100%;
-  min-height: 52px;
+  min-height: 56px;
+  border-radius: 18px;
   background: rgba(255, 255, 255, .06);
   border: 1px solid rgba(255, 255, 255, .12);
-  border-radius: 16px;
-  padding: 0 18px;
-  color: #f8fafc;
+  padding: 16px 18px;
+  color: #fff;
   font-size: 1rem;
   transition: border .2s ease, box-shadow .2s ease;
 }
 
-.container input::placeholder {
+input::placeholder {
   color: rgba(248, 250, 252, .6);
 }
 
-.container input:focus {
+input:focus {
   outline: none;
-  border-color: rgba(99, 102, 241, .65);
-  box-shadow: 0 0 0 6px rgba(99, 102, 241, .12);
+  border-color: rgba(99, 102, 241, .85);
+  box-shadow: 0 0 0 8px rgba(99, 102, 241, .12);
 }
 
-.container button {
+button {
   width: 100%;
-  min-height: 52px;
+  min-height: 56px;
   border: none;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #6366F1, #0EA5E9);
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7C3AED, #0EA5E9);
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
+  letter-spacing: 0.01em;
   cursor: pointer;
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.container button:hover {
+button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 20px 40px rgba(99, 102, 241, .25);
+  box-shadow: 0 20px 44px rgba(99, 102, 241, .28);
 }
 
-.container a {
-  display: block;
-  margin-top: 18px;
+.authFooter {
+  margin-top: 24px;
   text-align: center;
-  color: #93c5fd;
-  text-decoration: none;
-  transition: color .2s ease;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
-.container a:hover {
+.authFooter a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.authFooter a:hover {
+  color: #A78BFA;
+}
+
+.asideCard {
+  width: 100%;
+  border-radius: 28px;
+  padding: 30px;
+  background: linear-gradient(180deg, rgba(124, 58, 237, .14), rgba(14, 165, 233, .08));
+  border: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: 0 40px 80px rgba(15, 23, 42, .35);
+}
+
+.authAside {
+  display: none;
+}
+
+.asideCard {
+  width: 100%;
+  border-radius: 28px;
+  padding: 30px;
+  background: linear-gradient(180deg, rgba(124, 58, 237, .14), rgba(14, 165, 233, .08));
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.accentLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.asideCard h3 {
+  margin: 22px 0 12px;
+  font-size: 1.6rem;
   color: #fff;
 }
 
-@media (max-width: 540px) {
-  .container {
-    margin: 40px 16px;
-    padding: 28px 22px;
+.asideCard p {
+  color: #dbeafe;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .authPage {
+    gap: 40px;
+  }
+
+  .authAside {
+    display: block;
+    width: 420px;
   }
 }
+
+@media (max-width: 992px) {
+  .authPage {
+    padding: 24px;
+  }
+
+  .authPanel {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .authPage {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .authAside {
+    display: none;
+  }
+
+  .authPanel {
+    width: 100%;
+    padding: 28px;
+  }
+}
+
