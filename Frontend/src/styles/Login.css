@@ -160,60 +160,13 @@ input:focus {
   color: #93c5fd;
 }
 
-.authAside {
-  display: none;
-}
-
-.asideCard {
-  padding: 28px;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, .03);
-  border: 1px solid rgba(148, 163, 184, .10);
-  box-shadow: 0 24px 64px rgba(0, 0, 0, .18);
-}
-
-.asideLabel {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(56, 189, 248, .12);
-  color: #e0f2fe;
-  font-size: 0.82rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-
-.asideCard h3 {
-  color: #f8fafc;
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-}
-
-.asideCard p {
-  color: #cbd5e1;
-  line-height: 1.8;
-  margin-bottom: 18px;
-}
-
-.asideFeatureList {
-  display: grid;
-  gap: 10px;
-}
-
-.asideFeatureList p {
-  color: #e2e8f0;
-  font-size: 0.95rem;
-}
-
 @media (min-width: 1200px) {
   .authPage {
     gap: 34px;
   }
 
   .authAside {
-    display: block;
-    width: 380px;
+    display: none;
   }
 }
 

@@ -85,18 +85,6 @@ function Login() {
                     <span>New to Neurixa?</span> <Link to="/register">Create an account</Link>
                 </div>
             </div>
-            <div className="authAside">
-                <div className="asideCard">
-                    <div className="asideLabel">Workspace ready</div>
-                    <h3>Refined access panel</h3>
-                    <p>A calm, focused login experience with intuitive spacing and subtle contrast.</p>
-                    <div className="asideFeatureList">
-                        <p>Fast field focus</p>
-                        <p>Soft visual hierarchy</p>
-                        <p>Minimal distraction</p>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 }

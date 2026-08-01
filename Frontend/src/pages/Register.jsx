@@ -98,18 +98,6 @@ function Register() {
                     <span>Already have an account?</span> <Link to="/login">Login instead</Link>
                 </div>
             </div>
-            <div className="authAside">
-                <div className="asideCard">
-                    <div className="asideLabel">Built for teams</div>
-                    <h3>Reliable account setup</h3>
-                    <p>A balanced signup panel with crisp spacing and secure interaction cues.</p>
-                    <div className="asideFeatureList">
-                        <p>Focused input flow</p>
-                        <p>High readability</p>
-                        <p>Clean structure</p>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 }
